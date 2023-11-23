@@ -17,19 +17,11 @@ connectDB().then((param):void =>{
     param ? runServer(app) : console.log('server stoped');
 })
 
-const distDir:string = __dirname + '/frontend/dist/'
-
 app.use(express.json());
 app.use('/api/category', categoryRouter);
 app.use('/api/user', userRouter);
 app.use('/api/post', postRouter);
-app.use(express.static(distDir));
 
-
-app.get('*', (req, res) => {
-    res.sendFile(path.join(distDir));
-});
-
-console.log(path.join(distDir))
+console.log(__dirname)
 
 module.exports = app;
