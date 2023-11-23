@@ -28,7 +28,8 @@ app.use(express.static(distDir));
 
 app.get('*', (req, res) => {
     res.sendFile(path.join(distDir));
-    console.log(distDir)
 });
+
+console.log(path.join(distDir))
 
 module.exports = app;
