@@ -1,4 +1,7 @@
-import router from "./routers/categoryRouter";
+import categoryRouter from "./routers/category";
+import userRouter from "./routers/user";
+import postRouter from "./routers/post";
+import * as path from "path";
 
 const express = require('express');
 const cors = require('cors');
@@ -14,7 +17,18 @@ connectDB().then((param):void =>{
     param ? runServer(app) : console.log('server stoped');
 })
 
+const distDir:string = __dirname + '/frontend/dist/'
+
 app.use(express.json());
-app.use('/api', router);
+app.use('/api/category', categoryRouter);
+app.use('/api/user', userRouter);
+app.use('/api/post', postRouter);
+app.use(express.static(distDir));
+
+
+app.get('*', (req, res) => {
+    res.sendFile(path.join(distDir));
+    console.log(distDir)
+});
 
 module.exports = app;

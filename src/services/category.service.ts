@@ -1,11 +1,6 @@
-import Category from "../DB/models/category";
+import Category from "../DB/models/category.model";
 
-class MainService {
-    async sort() {
-        const dbDate = await Category.find();
-        console.log('sorty exav');
-        return dbDate;
-    }
+class CategoryService {
     async create(data) {
         const createdUser = await Category.create(data);
         return createdUser;
@@ -24,7 +19,6 @@ class MainService {
     }
 
     async update(id, data) {
-        console.log(id);
         if (!id) {
             throw new Error('id not selected')
         }
@@ -42,4 +36,4 @@ class MainService {
     }
 }
 
-export default new MainService;
+export default new CategoryService;

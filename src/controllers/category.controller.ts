@@ -1,26 +1,16 @@
-import MainService from "../services/mainService";
+import CategoryService from "../services/category.service";
 
-class Controller {
-    async sort(req, res):Promise<void> {
-        try {
-            const dbData = await MainService.sort();
-
-            res.dbData.status(200).json(dbData);
-        } catch (e) {
-            console.log(e);
-            res.status(500).json(e);
-        }
-    }
+class CategoryController {
     async create(req?, res?):Promise<void> {
         try {
-            const dbData = await MainService.create(req.body);
+            const dbData = await CategoryService.create(req.body);
             let modifedData = dbData.toObject();
 
             modifedData.id = modifedData._id;
             delete modifedData._id;
             delete modifedData.__v;
             console.log('DB data created');
-            res.status(200).json(modifedData);
+            res.status(201).json(modifedData);
         } catch (e) {
             console.log(e);
             res.status(500).json(e);
@@ -29,7 +19,7 @@ class Controller {
 
     async getAll(req, res):Promise<void> {
         try {
-            const dbData = await MainService.getAll();
+            const dbData = await CategoryService.getAll();
             if (Object.keys(req.query).length === 0) {
                 let modifedData = [];
                 dbData.forEach((data, i):void =>{
@@ -44,8 +34,8 @@ class Controller {
 
                 res.status(200).json(modifedData);
             } else {
-               const dbdate = await MainService.getAll(req.query);
-               res.status(200).json(dbdate);
+               const dbdata = await CategoryService.getAll(req.query);
+               res.status(200).json(dbdata);
             }
         } catch (e) {
             res.status(500).json(e);
@@ -54,7 +44,7 @@ class Controller {
 
     async getOne(req, res):Promise<void> {
         try {
-            const dbData:any = await MainService.getOne(req.params.id);
+            const dbData:any = await CategoryService.getOne(req.params.id);
             let modifedData = dbData.toObject();
             modifedData.id = modifedData._id;
             delete modifedData._id;
@@ -69,7 +59,7 @@ class Controller {
 
     async update(req, res):Promise<void> {
         try {
-            const dbData = await MainService.update(req.params.id, req.body);
+            const dbData = await CategoryService.update(req.params.id, req.body);
             let modifedData = dbData.toObject();
             modifedData.id = modifedData._id;
             delete modifedData._id;
@@ -84,8 +74,8 @@ class Controller {
 
     async delete(req, res):Promise<void> {
         try {
-            const data:void = await MainService.delete(req.params.id);
-            return res.status(201).json(data);
+            const data:void = await CategoryService.delete(req.params.id);
+            return res.status(201).json('category deleted');
         } catch (e) {
             console.log(e);
             res.status(500).json(e);
@@ -93,4 +83,4 @@ class Controller {
     }
 }
 
-export default new Controller;
+export default new CategoryController;
