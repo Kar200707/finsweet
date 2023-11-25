@@ -7,5 +7,5 @@ const distDir:string = __dirname + '/frontend/dist/'
 app.use(express.static(distDir));
 
 app.get('*', (req, res):void => {
-    res.sendFile(path.join(distDir));
+    res.sendFile(path.join(distDir))
 });
