@@ -1,7 +1,7 @@
 <div class="parent-div">
-  <mat-card style="padding: 30px" class="mat-card">
+  <mat-card class="mat-card">
     <mat-card-content>
-      <div class="login-text">Login for admin</div>
+      <h3 class="login-text">Login for admin</h3>
       <form class="example-form" [formGroup]="form" (ngSubmit)="save()">
         <mat-form-field class="full-width">
           <mat-label>Email</mat-label>
@@ -50,11 +50,9 @@
         <mat-error *ngIf="isFalseLogin">
           incorrect password or login
         </mat-error>
-        <button style="
-          margin-top: 30px;
-          width: 20%;
-          background-color: #a6a6a6;
-          color: #3a3a3a" mat-stroked-button>SEND</button>
+        <button mat-stroked-button style="color: white;" class="send_button">
+          SEND
+        </button>
       </form>
     </mat-card-content>
   </mat-card>

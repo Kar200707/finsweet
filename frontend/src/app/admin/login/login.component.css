@@ -1,10 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald&display=swap');
+
 .parent-div {
   width: 100%;
   height: 100vh;
-  background-color: #232536;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: url("/assets/Images/backgraunds/login-background.jpg"), no-repeat;
+  background-size: cover;
 }
 
 
@@ -17,14 +20,67 @@
   font-size: 20px;
 }
 
+.send_button {
+  margin-top: 30px;
+  width: 20%;
+  background-color: #2a339f;
+  color: #ffffff;
+}
+
 .mat-card {
-  width: 35%;
+  padding: 30px 20px;
+  border-radius: 20px;
+  background-color: rgba(154, 154, 154, 0.22);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border: 1px solid rgba(0, 0, 0, 0.18);
 }
 
 .login-text {
   margin-bottom: 30px;
   font-weight: bolder;
   letter-spacing: 3px;
+  font-family: Inter;
+  text-transform: uppercase;
   font-size: 25px;
-  color: #757575;
+  color: #524d4d;
+}
+
+@media screen and (max-width: 650px) {
+  .mat-card {
+    border: none;
+    border-radius: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 100px 0 0 0;
+    animation: 1s card-andim alternate cubic-bezier(.5 ,-1, .5, 2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  .send_button {
+    width: 100%;
+    padding: 25px 0;
+    font-size: 20px;
+  }
+
+  @keyframes card-andim {
+    from {
+      padding-top: 0;
+    }
+
+    to {
+      padding-top: 100px;
+    }
+  }
+
+  .login-text {
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-size: 40px;
+    letter-spacing: 5px;
+  }
 }

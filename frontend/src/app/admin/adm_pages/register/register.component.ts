@@ -119,7 +119,7 @@ export class RegisterComponent {
 
   save ():void {
     if (this.form.valid) {
-      this.reqServ.addData<any>(environment.host.get + 'register', this.form.value)
+      this.reqServ.addData<any>(environment.register.get, this.form.value)
         .subscribe(():void =>{
             this.matSnackBar.open('user registered', 'close', {
               duration: 3000

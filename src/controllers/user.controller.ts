@@ -1,5 +1,6 @@
 import userService from "../services/user.service";
-import user from "../routers/user";
+import userModel from "../DB/models/user.model";
+const bcrypt = require('bcrypt');
 
 class userController {
     async create(req, res):Promise<void> {
@@ -73,13 +74,17 @@ class userController {
 
     async update(req, res):Promise<void> {
         try {
-            let updatedData = await userService.update(req.params.id, req.body);
-            let modifedData = updatedData.toObject();
+            const candidate = await userModel.findOne({ email: req.body.email });
 
-            modifedData.id = modifedData._id;
-            delete modifedData._id;
-            delete modifedData.__v;
-            res.status(201).json(updatedData);
+            let data = req.body;
+
+            let hashPassword = await bcrypt.hashSync(data.password, 10);
+
+            data.password = hashPassword;
+
+            let updatedData = await userService.update(req.params.id, data);
+
+            res.status(201).json(data);
         } catch (e) {
             console.log(e);
             res.status(500).json(e);

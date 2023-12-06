@@ -7,6 +7,7 @@ import {RequestService} from "../../services/request.service";
 import {environment} from "../../../environment/environment";
 import {Authors} from "../../models/authors";
 import {ActivatedRoute} from "@angular/router";
+import {Title} from "@angular/platform-browser";
 
 @Component({
   selector: 'app-author',
@@ -36,9 +37,11 @@ export class AuthorComponent implements OnInit{
   authorLinkedin!: string;
   isNotPage: boolean = true;
 
-  constructor(private reqServ: RequestService, private route: ActivatedRoute) {
-
-  }
+  constructor(
+    private reqServ: RequestService,
+    private route: ActivatedRoute,
+    private titleService: Title
+  ) {  }
 
   ngOnInit():void {
     this.route.params.subscribe((params: any):void => {
@@ -56,6 +59,8 @@ export class AuthorComponent implements OnInit{
           this.authorTwitter = data.twitter;
           this.authorInsta = data.instagram;
           this.authorLinkedin = data.linkedin;
+
+          this.titleService.setTitle(data.name + ' profile');
 
           this.reqServ.getData<Posts[]>(environment.posts.get + '?user_id=' + data.id)
             .subscribe((posts:Posts[]):void => {

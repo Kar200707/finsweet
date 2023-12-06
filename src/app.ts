@@ -1,7 +1,8 @@
 import categoryRouter from "./routers/category";
 import userRouter from "./routers/user";
 import postRouter from "./routers/post";
-import * as path from "path";
+import logoRouter from "./routers/logo";
+import authRouter from "./routers/auth";
 
 const express = require('express');
 const cors = require('cors');
@@ -21,7 +22,7 @@ app.use(express.json());
 app.use('/api/category', categoryRouter);
 app.use('/api/user', userRouter);
 app.use('/api/post', postRouter);
-
-console.log(__dirname)
+app.use('/api/logos', logoRouter);
+app.use('/api/', authRouter);
 
 module.exports = app;

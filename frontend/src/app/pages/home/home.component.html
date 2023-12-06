@@ -52,10 +52,7 @@
             <p>
               By
               <a [routerLink]="['/author', items.user_id]">
-                {{
-                  dataAuthors == undefined ? 'loading...' :
-                  dataAuthors[i].name
-                }}
+                {{ postAuthors[i]?.name }}
               </a>
               &nbsp;l&nbsp;  {{ items.created_date }}
             </p>
@@ -146,11 +143,11 @@
       <h4>Featured in</h4>
     </div>
     <app-loader-bar style="width: 100%" [Height]="'80px'" *ngIf="dataLogos === undefined"></app-loader-bar>
-    <img *ngIf="dataLogos != undefined" [src]="dataLogos.logo1" alt="this is logog">
-    <img *ngIf="dataLogos != undefined" [src]="dataLogos.logo2" alt="this is logog">
-    <img *ngIf="dataLogos != undefined" [src]="dataLogos.logo3" alt="this is logog">
-    <img *ngIf="dataLogos != undefined" [src]="dataLogos.logo4" alt="this is logog">
-    <img *ngIf="dataLogos != undefined" [src]="dataLogos.logo5" alt="this is logog">
+    <img *ngIf="dataLogos != undefined" [src]="dataLogos.logo1" alt="this is logo">
+    <img *ngIf="dataLogos != undefined" [src]="dataLogos.logo2" alt="this is logo">
+    <img *ngIf="dataLogos != undefined" [src]="dataLogos.logo3" alt="this is logo">
+    <img *ngIf="dataLogos != undefined" [src]="dataLogos.logo4" alt="this is logo">
+    <img *ngIf="dataLogos != undefined" [src]="dataLogos.logo5" alt="this is logo">
   </div>
   <div class="testimonials_block">
     <div class="title_and_text_blocks">

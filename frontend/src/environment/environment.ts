@@ -1,4 +1,4 @@
-export const host = 'http://localhost:2000/api/';
+export const host = 'http://localhost:3000/api/';
 export const environment = {
   category: {
     get: host + 'category'
@@ -14,6 +14,14 @@ export const environment = {
 
   author: {
     get: host + 'user'
+  },
+
+  login: {
+    get: host + 'login'
+  },
+
+  register: {
+    get: host + 'register'
   },
 
   logos: {

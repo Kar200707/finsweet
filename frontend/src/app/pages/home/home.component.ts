@@ -10,6 +10,7 @@ import {LoaderBarComponent} from "../../components/loader-bar/loader-bar.compone
 import {RequestService} from "../../services/request.service";
 import {environment} from "../../../environment/environment";
 import {Posts} from "../../models/posts";
+import {Logo} from "../../models/logo";
 
 @Component({
   selector: 'app-home',
@@ -35,7 +36,8 @@ export class HomeComponent implements OnInit {
   dataAuthors!: Authors[];
   dataAuthor1!: Authors;
   dataAuthor2!: Authors;
-  dataLogos!: any;
+  dataLogos!: Logo;
+  postAuthors: Authors[] = [];
 
   constructor(private reqServ: RequestService) { }
 
@@ -51,6 +53,17 @@ export class HomeComponent implements OnInit {
       .subscribe(
         (data: Posts[]):void => {
           this.dataPosts = data;
+
+
+          data.forEach((item, i)=>{
+            this.reqServ.getData<Authors>(environment.author.get + '/' + item.user_id)
+              .subscribe(
+                (auth: Authors):void => {
+                  this.postAuthors[i] = auth;
+                }
+              )
+          })
+
           this.reqServ.getData<Authors>(environment.author.get + '/' + this.dataPosts[1].user_id)
             .subscribe(
                (data: Authors):void => {
@@ -77,7 +90,7 @@ export class HomeComponent implements OnInit {
     this.reqServ.getData<any>(environment.logos.get)
       .subscribe(
         (data: any):void => {
-          this.dataLogos = data;
+          this.dataLogos = data[0];
         }
       )
   }

@@ -43,7 +43,7 @@ export class LoginComponent {
 
   save():void {
     if (this.form.valid) {
-      this.reqServ.addData<any>(environment.host.get + 'login', this.form.value)
+      this.reqServ.addData<any>(environment.login.get, this.form.value)
           .subscribe((data):void=>{
             localStorage.setItem('token', data.accessToken)
             localStorage.setItem('userData', JSON.stringify(data))

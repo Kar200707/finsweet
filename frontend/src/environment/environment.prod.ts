@@ -4,6 +4,14 @@ export const environment = {
     get: host + 'category'
   },
 
+  login: {
+    get: host + 'login'
+  },
+
+  register: {
+    get: host + 'register'
+  },
+
   subscribe: {
     get: host + 'subscribe'
   },
