@@ -3,7 +3,7 @@ function runServer(app):void {
 
     try {
         let server = app.listen(port, ():void => {
-            console.log("app listening at http://%s:%s", server.address().address, port);
+            console.log("app listening at http://host", server.address().address, port);
         })
     } catch (e) {
         console.log('server error:', e);

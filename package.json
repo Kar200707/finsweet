@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon index.ts",
     "frontend:build": "npm run build --prefix frontend",
-    "start": "./frontend npm run build"
+    "start": "ts-node index.ts"
   },
   "keywords": [],
   "author": "",

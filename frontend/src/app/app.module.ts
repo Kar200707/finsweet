@@ -19,7 +19,7 @@ import { routes } from "./routes/main.route";
     }),
     HttpClientModule,
     BrowserAnimationsModule,
-    MatButtonModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
