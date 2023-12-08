@@ -26,6 +26,10 @@
   background-color: rgb(138, 138, 138);
 }
 
+body {
+  overflow: hidden;
+}
+
 .container {
   width: 1280px;
   margin: auto;

@@ -1,3 +1,8 @@
+* {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
 .footer_block {
   background: #232536;
   display: flex;

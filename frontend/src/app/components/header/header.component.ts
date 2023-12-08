@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {RouterModule} from "@angular/router";
+import {MatIconModule} from "@angular/material/icon";
 
 @Component({
   selector: 'app-header',
@@ -7,7 +8,8 @@ import {RouterModule} from "@angular/router";
   styleUrls: ['./header.component.css'],
   standalone: true,
   imports: [
-    RouterModule
+    RouterModule,
+    MatIconModule
   ]
 })
 export class HeaderComponent {

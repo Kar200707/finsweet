@@ -6,7 +6,7 @@ import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/
 import {NgIf} from "@angular/common";
 import {MatIconModule} from "@angular/material/icon";
 import {MatButtonModule} from "@angular/material/button";
-import {Router} from "@angular/router";
+import {Router, RouterLink} from "@angular/router";
 import {environment} from "../../../environment/environment";
 
 @Component({
@@ -19,7 +19,8 @@ import {environment} from "../../../environment/environment";
     ReactiveFormsModule,
     NgIf,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    RouterLink
   ],
   standalone: true
 })

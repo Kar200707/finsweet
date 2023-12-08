@@ -38,7 +38,6 @@
 }
 
 .login-text {
-  margin-bottom: 30px;
   font-weight: bolder;
   letter-spacing: 3px;
   font-family: Inter;
@@ -83,4 +82,19 @@
     font-size: 40px;
     letter-spacing: 5px;
   }
+}
+
+@media screen and (max-width: 510px) {
+  .mat-card > mat-card-content > div {
+    flex-direction: column;
+  }
+}
+
+.back-home {
+  text-decoration: none;
+  color: #592EA9;
+  text-transform: uppercase;
+  font-weight: bolder;
+  display: flex;
+  align-items: center;
 }
