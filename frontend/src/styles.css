@@ -4,6 +4,10 @@
 @import "app/styles/button.css";
 @import "src/app/styles/media.css";
 
+body {
+  overflow-x: hidden;
+}
+
 .mat-drawer-inner-container::-webkit-scrollbar {
   display: none;
 }
@@ -24,10 +28,6 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: rgb(138, 138, 138);
-}
-
-body {
-  overflow: hidden;
 }
 
 .container {
