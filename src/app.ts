@@ -3,6 +3,9 @@ import userRouter from "./routers/user";
 import postRouter from "./routers/post";
 import logoRouter from "./routers/logo";
 import authRouter from "./routers/auth";
+import contactUs from "./routers/contactUs";
+import subRouter from "./routers/subscribe";
+import privacyPolicy from "./routers/privacyPolicy";
 
 const express = require('express');
 const cors = require('cors');
@@ -23,6 +26,10 @@ app.use('/api/category', categoryRouter);
 app.use('/api/user', userRouter);
 app.use('/api/post', postRouter);
 app.use('/api/logos', logoRouter);
+app.use('/api/contact-us', contactUs);
+app.use('/api/subscribe', subRouter);
+app.use('/api/privacy-policy', privacyPolicy);
+
 app.use('/api/', authRouter);
 
 module.exports = app;
