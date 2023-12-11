@@ -1,5 +1,10 @@
 <header>
-  <div class="header_block">
+  <div
+    [style.-webkit-backdrop-filter]="navBarScrollPosition && innerWidth > 850 ? 'blur(10px)' : '0'"
+    [style.backdrop-filter]="navBarScrollPosition && innerWidth > 850 ? 'blur(10px)' : '0'"
+    [style.background-color]="navBarScrollPosition ? 'rgba(35, 37, 54, 0.69)' : 'rgba(35, 37, 54, 1)'"
+    [style.position]="navBarScrollPosition ? 'fixed' : 'absolute'"
+    [class]="navBarScrollPosition ? 'header_block header-anim' : 'header_block'">
     <div class="header_container">
       <img routerLink="" class="header_logo" src="assets/Images/logos/logo.png" alt="this is header logo">
       <nav>

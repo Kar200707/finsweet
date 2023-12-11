@@ -1,4 +1,8 @@
-<div class="posted_on_startup_block">
+<div
+  [style.background-image]="dataPosts === undefined ? 'loading...' : 'url(' + dataPosts[1].image + ')'"
+  #postDiv
+  (error)="postDiv.style.backgroundImage = 'url(./assets/Images/not-image.jpeg)'"
+  class="posted_on_startup_block">
   <div class="posted_on_startup_block-lear">
     <div class="posted_on_startup_container">
       <div *ngIf="dataAuthors != undefined && dataPosts[1].user_id != undefined" class="posted_on_startup_text_box">
@@ -129,9 +133,10 @@
       <app-loader-bar style="width: 100%" [Height]="'350px'" *ngIf="dataAuthors === undefined"></app-loader-bar>
       <div
         *ngFor="let data of dataAuthors, let i = index"
-        class="list-author-div"
-      >
-        <app-list-outhors *ngIf="i < 4" [dataAuthors]="data" style="width: 100%"></app-list-outhors>
+        class="list-author-div">
+          <ng-container *ngIf="i < 4">
+            <app-list-outhors [dataAuthors]="data" style="width: 100%"></app-list-outhors>
+          </ng-container>
       </div>
     </div>
   </div>

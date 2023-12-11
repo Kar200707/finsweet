@@ -1,6 +1,26 @@
 .header_block {
   padding: 12px 0;
   background: #232536;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.header-anim {
+  animation: header-anim 2s alternate;
+}
+
+@keyframes header-anim {
+  from {
+    top: -200px;
+    opacity: 0;
+  }
+
+  to {
+    top: 0;
+    opacity: 1;
+  }
 }
 
 * {

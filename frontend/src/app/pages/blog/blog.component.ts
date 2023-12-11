@@ -38,7 +38,7 @@ export class BlogComponent implements OnInit {
   constructor(private reqServ: RequestService) {  }
 
   loadPosts():void {
-    this.reqServ.getData<Posts[]>(environment.posts.get + '?_page=' + this.pageIndex + '&_limit=5')
+    this.reqServ.getData<Posts[]>(environment.posts.get)
       .subscribe(
         (data: Posts[]):void => {
           this.dataPostsPage = data;

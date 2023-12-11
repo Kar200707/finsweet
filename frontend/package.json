@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "open": "ng serve -o",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "dev:ssr": "ng run finsweet-project:serve-ssr",

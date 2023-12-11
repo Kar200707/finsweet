@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {AfterViewInit, Component, ElementRef, HostListener, ViewChild} from '@angular/core';
 import {RouterModule} from "@angular/router";
 
 @Component({
@@ -13,6 +13,4 @@ import {RouterModule} from "@angular/router";
     RouterModule
   ],
 })
-export class JoinOurTeamComponent {
-
-}
+export class JoinOurTeamComponent {  }

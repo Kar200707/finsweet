@@ -22,9 +22,9 @@
 }
 
 .posted_on_startup_block {
-  background: url(/assets/Images/backgraunds/man-in-black-suit-wearing-eye-glasses-sitting-on-gray-sofa-using-macbook-3772622.png) center no-repeat;
+  background-position: center;
   background-size: cover;
-  scroll-snap-align: center;
+  background-color: #1e2352;
 }
 
 .posted_on_startup_block-lear {
@@ -392,6 +392,7 @@
 .catagory_block {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 25px;
 }
 
