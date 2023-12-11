@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npm install @angular/cli && npm run build --prefix frontend && ts-node index.ts",
+    "start": "concurrently \"npm run ts_node\"",
     "ts_node": "ts-node index.ts",
     "nodemon": "nodemon index.ts",
     "frontend:run": "npm run start --prefix frontend",
