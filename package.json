@@ -4,14 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon index.ts",
+    "start": "concurrently \"npm run frontend:build\" \"npm run ts_node\"",
+    "ts_node": "ts-node index.ts",
+    "nodemon": "nodemon index.ts",
+    "frontend:run": "npm run start --prefix frontend",
     "frontend:build": "npm run build --prefix frontend",
-    "start": "ts-node index.ts"
+    "dev": "concurrently \"npm run nodemon\" \"npm run frontend:run\"",
+    "git:push": "git add . && git commit -m 'quick commit' && git push origin main"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "concurrently": "^8.2.2",
     "typescript": "^5.2.2"
   },
   "dependencies": {
