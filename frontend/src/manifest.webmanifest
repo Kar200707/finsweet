@@ -2,7 +2,7 @@
   "name": "finsweet",
   "short_name": "finsweet",
   "theme_color": "#232536",
-  "background_color": "#fffff",
+  "background_color": "#ffffff",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
