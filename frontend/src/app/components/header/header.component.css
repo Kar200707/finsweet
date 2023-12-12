@@ -70,24 +70,26 @@
   padding: 30px;
   width: 250px;
   z-index: 99;
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
   justify-content: flex-start;
   align-items: center;
   box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
   position: absolute;
   opacity: 0;
-  right: 16px;
-  transform: translate(250px, -250px);
-  top: 10px;
+  right: -101px;
+  top: -321px;
   background-color: rgba(0, 0, 0, 0.65);
-  transition: .3s cubic-bezier(.5 ,-.5, .5, 1.5);
-  border-radius: 10px;
+  transition: .3s cubic-bezier(0 ,-1, 0, 1.2);
+  border-radius: 15px;
+  scale: 0.1;
 }
 
 .mobile_menu_checkbox:hover + .mobile_menu{
-  transform: translate(0, 0);
+  scale: 1;
   opacity: 1;
+  right: 12px;
+  top: 10px;
 }
 
 .mobile_menu > label {
