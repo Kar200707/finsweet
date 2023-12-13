@@ -10,7 +10,6 @@ import {RequestService} from "../../../services/request.service";
 import {environment} from "../../../../environment/environment";
 import {MatSelectModule} from "@angular/material/select";
 import {MatSnackBar, MatSnackBarModule} from "@angular/material/snack-bar";
-import {log} from "@nguniversal/builders/src/ssr-dev-server";
 
 @Component({
   selector: 'app-register',
