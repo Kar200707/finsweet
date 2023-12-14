@@ -27,7 +27,6 @@
     "@angular/platform-server": "^17.0.6",
     "@angular/pwa": "^17.0.6",
     "@angular/router": "^17.0.6",
-    "@angular/service-worker": "^17.0.6",
     "@capacitor/android": "^5.5.1",
     "@capacitor/angular": "^2.0.3",
     "@capacitor/core": "latest",
