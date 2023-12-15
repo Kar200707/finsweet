@@ -1,4 +1,4 @@
-export const host = 'https://finsweet.adaptable.app/api/';
+export const host = 'https://finsweet-server.onrender.com/api/';
 export const environment = {
   category: {
     get: host + 'category'
