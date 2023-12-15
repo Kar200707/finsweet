@@ -1,5 +1,5 @@
 function runServer(app):void {
-    const port:string | number = 3000;
+    const port:string | number = process.env.PORT || 3000;
 
     try {
         let server = app.listen(port, ():void => {
