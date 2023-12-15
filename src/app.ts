@@ -14,18 +14,15 @@ const runServer = require('../src/server/server');
 const connectDB = require('../src/DB/dbConnection');
 
 app.use(cors({
-    origin: "https://finsweet.adaptable.app",
+    origin: "*",
 }));
-
-app.use((req, res, next) => {
-    res.header("Access-Control-Allow-Origin", "https://finsweet.adaptable.app")
-})
 
 connectDB().then((param):void =>{
     param ? runServer(app) : console.log('server stoped');
 })
 
 app.use(express.json());
+
 app.use('/api/category', categoryRouter);
 app.use('/api/user', userRouter);
 app.use('/api/post', postRouter);
