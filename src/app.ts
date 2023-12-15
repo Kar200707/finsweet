@@ -14,8 +14,12 @@ const runServer = require('../src/server/server');
 const connectDB = require('../src/DB/dbConnection');
 
 app.use(cors({
-    origin: "*",
+    origin: "https://finsweet.adaptable.app",
 }));
+
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "https://finsweet.adaptable.app")
+})
 
 connectDB().then((param):void =>{
     param ? runServer(app) : console.log('server stoped');
