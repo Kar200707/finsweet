@@ -17,6 +17,8 @@ app.use(cors({
     origin: "*",
 }));
 
+app.use(express.json({limit: '2mb'}));
+
 connectDB().then((param):void =>{
     param ? runServer(app) : console.log('server stoped');
 })
