@@ -23,6 +23,8 @@
             "assets": [
               "src/assets/Images/icons/finsweet.jpg",
               "src/assets",
+              "src/manifest.webmanifest",
+              "src/manifest.webmanifest",
               "src/manifest.webmanifest"
             ],
             "styles": [
@@ -33,7 +35,9 @@
                 "input": "src/theme/variables.css"
               }
             ],
-            "scripts": []
+            "scripts": [],
+            "serviceWorker": true,
+            "ngswConfigPath": "ngsw-config.json"
           },
           "configurations": {
             "production": {
@@ -101,6 +105,8 @@
                 "glob": "**/*.svg",
                 "output": "./svg"
               },
+              "src/manifest.webmanifest",
+              "src/manifest.webmanifest",
               "src/manifest.webmanifest"
             ],
             "styles": [
